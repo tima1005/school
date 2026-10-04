@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Жоктоо</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="header-title">
+            <h1>ЖОКТОО</h1>
+            <p>Окуучулардын катышуусу</p>
+        </div>
+
+        <div class="header-date">
+            <button onclick="changeWeek(-1)">‹</button>
+
+            <div>
+                <strong id="weekTitle"></strong>
+                <span id="weekSubtitle"></span>
+            </div>
+
+            <button onclick="changeWeek(1)">›</button>
+        </div>
+
+        <button class="settings-btn" onclick="openStudents()">
+            ⚙
+        </button>
+
+    </header>
+
+
+    <!-- TABLE -->
+    <main>
+
+        <div class="table-wrapper">
+
+            <table class="attendance-table">
+
+                <thead>
+
+                <tr>
+
+                    <th rowspan="2" class="number-col">
+                        №
+                    </th>
+
+                    <th rowspan="2" class="fio-col">
+                        ФИО
+                    </th>
+
+                    <th rowspan="2" class="address-col">
+                        Адрес
+                    </th>
+
+                    <th rowspan="2" class="phone-col">
+                        Номер
+                    </th>
+
+                    <th
+                        id="day-0"
+                        colspan="2"
+                    ></th>
+
+                    <th
+                        id="day-1"
+                        colspan="2"
+                    ></th>
+
+                    <th
+                        id="day-2"
+                        colspan="2"
+                    ></th>
+
+                    <th
+                        id="day-3"
+                        colspan="2"
+                    ></th>
+
+                    <th
+                        id="day-4"
+                        colspan="2"
+                    ></th>
+
+                </tr>
+
+
+                <tr>
+
+                    <th>утро</th>
+                    <th>вечер</th>
+
+                    <th>утро</th>
+                    <th>вечер</th>
+
+                    <th>утро</th>
+                    <th>вечер</th>
+
+                    <th>утро</th>
+                    <th>вечер</th>
+
+                    <th>утро</th>
+                    <th>вечер</th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="studentsTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+
+    <!-- STUDENTS MODAL -->
+
+    <div id="studentsModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <div>
+                    <h2>Окуучулар</h2>
+                    <p>Окуучулардын тизмеси</p>
+                </div>
+
+                <button
+                    class="close-btn"
+                    onclick="closeStudents()"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="student-form">
+
+                <input
+                    id="studentName"
+                    type="text"
+                    placeholder="ФИО"
+                >
+
+                <input
+                    id="studentAddress"
+                    type="text"
+                    placeholder="Адрес"
+                >
+
+                <input
+                    id="studentPhone"
+                    type="text"
+                    placeholder="Номер телефона"
+                >
+
+                <button onclick="addStudent()">
+                    + Кошуу
+                </button>
+
+            </div>
+
+
+            <div id="studentsManageList"></div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,493 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eeeeee;
+    color: #222;
+}
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+}
+
+
+/* HEADER */
+
+.header {
+    height: 85px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    padding: 10px 25px;
+
+    background: #eeeeee;
+
+    border-bottom: 1px solid #999;
+}
+
+.header-title h1 {
+    font-size: 25px;
+}
+
+.header-title p {
+    margin-top: 4px;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* DATE */
+
+.header-date {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.header-date button {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #aaa;
+    background: white;
+
+    border-radius: 6px;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.header-date div {
+    min-width: 230px;
+    text-align: center;
+}
+
+.header-date strong {
+    display: block;
+    font-size: 18px;
+}
+
+.header-date span {
+    display: block;
+    margin-top: 4px;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* SETTINGS */
+
+.settings-btn {
+    justify-self: end;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #aaa;
+    background: white;
+
+    border-radius: 6px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* TABLE */
+
+main {
+    padding: 15px;
+}
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #777;
+}
+
+.attendance-table {
+    width: 100%;
+
+    min-width: 1250px;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+
+/* COLUMNS */
+
+.number-col {
+    width: 45px;
+}
+
+.fio-col {
+    width: 220px;
+}
+
+.address-col {
+    width: 230px;
+}
+
+.phone-col {
+    width: 180px;
+}
+
+
+/* CELLS */
+
+.attendance-table th,
+.attendance-table td {
+    border: 1px solid #999;
+}
+
+
+/* HEADER CELLS */
+
+.attendance-table thead th {
+    background: #d8d8d8;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    padding: 7px;
+}
+
+.attendance-table thead tr:first-child th {
+    height: 50px;
+}
+
+.attendance-table thead tr:nth-child(2) th {
+    height: 30px;
+
+    font-size: 11px;
+}
+
+
+/* DAY */
+
+.day-header {
+    font-size: 13px;
+}
+
+
+/* STUDENT */
+
+.number-cell {
+    text-align: center;
+
+    font-size: 12px;
+
+    background: #fafafa;
+}
+
+.fio-cell {
+    padding: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    background: #fafafa;
+}
+
+.address-cell {
+    padding: 8px;
+
+    font-size: 12px;
+
+    color: #444;
+}
+
+.phone-cell {
+    padding: 8px;
+
+    font-size: 12px;
+
+    color: #444;
+}
+
+
+/* ATTENDANCE */
+
+.attendance-cell {
+    width: 55px;
+
+    text-align: center;
+
+    background: white;
+
+    padding: 4px;
+}
+
+
+/* + / - */
+
+.status-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 4px;
+}
+
+.status-btn {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 5px;
+
+    border: 1px solid #ddd;
+
+    background: #f7f7f7;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.plus-btn {
+    color: #08a653;
+}
+
+.minus-btn {
+    color: #ef3340;
+}
+
+
+/* ACTIVE */
+
+.status-btn.active-plus {
+    background: #dff5e8;
+
+    border: 2px solid #08a653;
+}
+
+.status-btn.active-minus {
+    background: #ffe1e1;
+
+    border: 2px solid #ef3340;
+}
+
+
+/* ROW */
+
+.student-row:nth-child(even) {
+    background: #f7f7f7;
+}
+
+.student-row:hover td {
+    background: #f2f2f2;
+}
+
+
+/* MODAL */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.45);
+
+    z-index: 100;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    width: 100%;
+
+    max-width: 650px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 8px;
+}
+
+.modal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+}
+
+.modal-header p {
+    color: #777;
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+.close-btn {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid #aaa;
+
+    background: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* FORM */
+
+.student-form {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.student-form input {
+    height: 42px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 4px;
+
+    padding: 0 10px;
+
+    font-size: 13px;
+}
+
+.student-form input:first-child {
+    grid-column: span 2;
+}
+
+.student-form button {
+    height: 42px;
+
+    border: none;
+
+    background: #333;
+
+    color: white;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+
+/* MANAGE STUDENTS */
+
+.manage-student {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 40px;
+
+    gap: 8px;
+
+    align-items: center;
+
+    border: 1px solid #ddd;
+
+    padding: 8px;
+
+    margin-bottom: 6px;
+
+    font-size: 12px;
+}
+
+.delete-student {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    background: #ffe5e5;
+
+    color: red;
+
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .header {
+        grid-template-columns: 1fr auto;
+
+        height: 75px;
+
+        padding: 8px 12px;
+    }
+
+    .header-date {
+        grid-column: 1 / 2;
+
+        grid-row: 2;
+
+        display: none;
+    }
+
+    .settings-btn {
+        grid-column: 2;
+    }
+
+    .header-title h1 {
+        font-size: 20px;
+    }
+
+    .header-title p {
+        font-size: 11px;
+    }
+
+    main {
+        padding: 8px;
+    }
+
+    .attendance-table {
+        min-width: 1200px;
+    }
+}
